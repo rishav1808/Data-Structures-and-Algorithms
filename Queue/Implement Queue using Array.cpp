@@ -1,4 +1,4 @@
-class Queue {
+]class Queue {
 public:
     int *arr;
      int qfront;
