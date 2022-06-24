@@ -12,7 +12,7 @@ vector<int> dijkstra(vector<vector<int>> &vec, int vertices, int edges, int sour
     vector<int>distance(vertices,INT_MAX);
     /*for(int i=0;i<vertices;i++)
     {
-        distance[i]=INT_MAX;
+        distance[i]=INT_MAX; 
     }*/
     distance[source]=0;
     //pair->(distance,node)
