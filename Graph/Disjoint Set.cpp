@@ -36,23 +36,23 @@ class DisjointSet{
     void unionSet(int node1 ,int node2)
     {
         //Step-1 find parent of both the nodes
-        int p1= findParent(node1);
-        int p2 = findParent(node2);
-        if(p1==p2)
+        node1 = findParent(node1);
+        node2 = findParent(node2);
+        if(node1==node2)
         return;
         else
         {
-            if(rank[p1]==rank[p2])
+            if(rank[node1]==rank[node2])
             {
-                parent[node2]=parent[node1];
+                parent[node2]=node1;
                 rank[node1]++;
             }
-            else if(rank[p1]<rank[p2])
+            else if(rank[node1]<rank[node2])
             {
-                parent[node1]=parent[node2];
+                parent[node1]=node2;
             }
             else{
-                parent[node2]=parent[node1];
+                parent[node2]=node1;
             }
         }
     }
