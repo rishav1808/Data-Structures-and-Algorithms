@@ -5,7 +5,7 @@ bool cmp(vector<int>&a,vector<int>&b)
 }
 int findParent(int node ,vector<int>&parent)
 {
-    if(node == parent[node])
+    if(node == parent[node ])
         return node;
     parent[node] = findParent(parent[node],parent);
     return parent[node];
