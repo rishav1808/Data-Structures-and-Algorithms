@@ -2,29 +2,27 @@
 
 using namespace std;
 
-bool fun(int *a,int n,int sum)
+bool subsetSum(int *a,int n ,int sum)
 {
+    if(n==0 && sum!=0)
+    return false;
     if(sum==0)
     return true;
-    if(n==0)
-    return false;
     
     if(a[n-1]<=sum)
-    {
-        
-         return  fun(a,n-1,sum)|| fun(a,n-1,sum-a[n-1]);
+    {//condition of take
+        return (subsetSum(a,n-1,sum-a[n-1]) || subsetSum(a,n-1,sum));
     }
     else
-    return fun(a,n-1,sum);
+    //condition of not take
+    return subsetSum(a,n-1,sum);
 }
 
 
 int main()
 {
-    int a[]={2,3,7,8,10};
-    int sum=11;
-    int n=5;
-    cout<<fun(a,n,sum);
+    int set[] = {3, 34, 4, 12, 5, 2}, sum = 99;
+    cout<<subsetSum(set,6,sum);
 
     return 0;
 }
